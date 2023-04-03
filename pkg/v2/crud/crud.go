@@ -2,9 +2,10 @@ package crud
 
 import (
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/crud/expr"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+
+	"github.com/justakit/go-scim/pkg/v2/crud/expr"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Add value to SCIM resource at the given SCIM path. If SCIM path is empty, value will be added

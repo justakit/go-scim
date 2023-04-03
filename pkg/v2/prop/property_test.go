@@ -2,7 +2,7 @@ package prop
 
 import (
 	"encoding/json"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"io"

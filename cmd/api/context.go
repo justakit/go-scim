@@ -2,19 +2,20 @@ package api
 
 import (
 	"context"
-	"github.com/imulab/go-scim/cmd/internal/groupsync"
-	scimmongo "github.com/imulab/go-scim/mongo/v2"
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/db"
-	"github.com/imulab/go-scim/pkg/v2/service"
-	"github.com/imulab/go-scim/pkg/v2/service/filter"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+	"sync"
+	"time"
+
+	"github.com/justakit/go-scim/cmd/internal/groupsync"
+	scimmongo "github.com/justakit/go-scim/mongo/v2"
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/db"
+	"github.com/justakit/go-scim/pkg/v2/service"
+	"github.com/justakit/go-scim/pkg/v2/service/filter"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 	"github.com/rs/zerolog"
 	"github.com/streadway/amqp"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"sync"
-	"time"
 )
 
 type applicationContext struct {

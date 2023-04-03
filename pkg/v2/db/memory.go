@@ -3,10 +3,11 @@ package db
 import (
 	"context"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"sync"
+
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Memory return a new memory implementation of DB. This implementation saves resources in memory. Although

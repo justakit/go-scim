@@ -3,13 +3,14 @@ package service
 import (
 	"context"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/db"
-	"github.com/imulab/go-scim/pkg/v2/json"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/service/filter"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"io"
 	"io/ioutil"
+
+	"github.com/justakit/go-scim/pkg/v2/db"
+	"github.com/justakit/go-scim/pkg/v2/json"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/service/filter"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // ReplaceService returns a replace service.

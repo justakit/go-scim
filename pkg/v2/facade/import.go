@@ -1,13 +1,14 @@
 package facade
 
 import (
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/crud/expr"
-	"github.com/imulab/go-scim/pkg/v2/facade/internal"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"reflect"
 	"time"
+
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/crud/expr"
+	"github.com/justakit/go-scim/pkg/v2/facade/internal"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Import imports the values of the resource into the destination object. For each field and its corresponding path

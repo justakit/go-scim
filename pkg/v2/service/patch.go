@@ -8,13 +8,13 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/crud/expr"
-	"github.com/imulab/go-scim/pkg/v2/db"
-	scimjson "github.com/imulab/go-scim/pkg/v2/json"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/service/filter"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/crud/expr"
+	"github.com/justakit/go-scim/pkg/v2/db"
+	scimjson "github.com/justakit/go-scim/pkg/v2/json"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/service/filter"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // PatchService returns a patch resource service. preFilters will run after resource fetched from database and before

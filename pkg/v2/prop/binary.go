@@ -3,8 +3,9 @@ package prop
 import (
 	"encoding/base64"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"hash/fnv"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // NewBinary creates a new binary property associated with attribute.

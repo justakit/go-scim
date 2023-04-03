@@ -5,11 +5,12 @@ import (
 	"crypto/sha1"
 	"encoding/binary"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"math/rand"
 	"strings"
 	"time"
+
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // MetaFilter returns a ByResource filter that assigns and updates the meta core attribute.

@@ -3,10 +3,11 @@ package prop
 import (
 	"encoding/binary"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/annotation"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"hash/fnv"
 	"strings"
+
+	"github.com/justakit/go-scim/pkg/v2/annotation"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // NewComplex creates a new complex property associated with attribute. All sub attributes are created.

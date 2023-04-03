@@ -2,8 +2,9 @@ package filter
 
 import (
 	"context"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // ByResource is the filter responsible of filtering a resource.

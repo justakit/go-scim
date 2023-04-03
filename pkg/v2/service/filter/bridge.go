@@ -2,7 +2,8 @@ package filter
 
 import (
 	"context"
-	"github.com/imulab/go-scim/pkg/v2/prop"
+
+	"github.com/justakit/go-scim/pkg/v2/prop"
 )
 
 // ByPropertyToByResource returns a ByResource that iterates each property in the resource using a DFS visitor

@@ -3,14 +3,15 @@ package args
 import (
 	"context"
 	"fmt"
-	"github.com/cenkalti/backoff/v4"
-	scimmongo "github.com/imulab/go-scim/mongo/v2"
-	"github.com/urfave/cli/v2"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/cenkalti/backoff/v4"
+	scimmongo "github.com/justakit/go-scim/mongo/v2"
+	"github.com/urfave/cli/v2"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 // MemoryDB is the configuration options related to a in-memory db.DB implementation.

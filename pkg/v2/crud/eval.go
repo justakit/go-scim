@@ -3,11 +3,12 @@ package crud
 import (
 	"errors"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/crud/expr"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"strconv"
 	"strings"
+
+	"github.com/justakit/go-scim/pkg/v2/crud/expr"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Evaluate the resource with the given SCIM filter and return the boolean result or an error.

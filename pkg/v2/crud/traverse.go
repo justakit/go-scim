@@ -2,10 +2,11 @@ package crud
 
 import (
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/annotation"
-	"github.com/imulab/go-scim/pkg/v2/crud/expr"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+
+	"github.com/justakit/go-scim/pkg/v2/annotation"
+	"github.com/justakit/go-scim/pkg/v2/crud/expr"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 func defaultTraverse(property prop.Property, query *expr.Expression, callback func(nav prop.Navigator) error) error {

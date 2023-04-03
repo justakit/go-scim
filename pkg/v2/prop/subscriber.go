@@ -1,9 +1,10 @@
 package prop
 
 import (
-	"github.com/imulab/go-scim/pkg/v2/annotation"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"sync"
+
+	"github.com/justakit/go-scim/pkg/v2/annotation"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Subscriber attaches to Property and gets notified various state change events via Notify method.

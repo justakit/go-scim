@@ -3,11 +3,12 @@ package handlerutil
 import (
 	"encoding/json"
 	"errors"
-	scimjson "github.com/imulab/go-scim/pkg/v2/json"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/service"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"net/http"
+
+	scimjson "github.com/justakit/go-scim/pkg/v2/json"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/service"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // WriteResourceToResponse writes the given resource to http.ResponseWriter, respecting the attributes or excludedAttributes

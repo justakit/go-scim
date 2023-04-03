@@ -1,12 +1,13 @@
 package v2
 
 import (
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
-	"go.mongodb.org/mongo-driver/bson"
 	"math"
 	"strconv"
 	"time"
+
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 // Create an adapter to BSON that implements the bson.Marshaler interface so it can be directly

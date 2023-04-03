@@ -2,25 +2,31 @@ package expr
 
 import (
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"strconv"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // CompilePath compiles the given SCIM path expression and returns the head of the path expression linked list, or any error.
 // The result may contain a filter root node, depending on the given path expression.
 //
 // For example, for a path such as:
+//
 //	name.familyName
+//
 // CompilePath returns a structure like:
+//
 //	name -> familyName
 //
 // For a path such as:
-//	emails[value eq "foo@bar.com"].primary
-// CompilePath returns a structure like:
-//	   emails -> eq -> primary
-//	            /  \
-//	         value  "foo@bar.com"
 //
+//	emails[value eq "foo@bar.com"].primary
+//
+// CompilePath returns a structure like:
+//
+//	emails -> eq -> primary
+//	         /  \
+//	      value  "foo@bar.com"
 func CompilePath(path string) (*Expression, error) {
 	compiler := &pathCompiler{
 		scan: &pathScanner{},

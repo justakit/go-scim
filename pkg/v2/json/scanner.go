@@ -5,8 +5,9 @@ package json
 
 import (
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"strconv"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // checkValid verifies that data is valid JSON-encoded data.

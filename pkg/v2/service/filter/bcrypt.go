@@ -4,11 +4,12 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/annotation"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
-	"golang.org/x/crypto/bcrypt"
 	"strconv"
+
+	"github.com/justakit/go-scim/pkg/v2/annotation"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
+	"golang.org/x/crypto/bcrypt"
 )
 
 // BCryptFilter returns a ByProperty filter that hashes data using the BCrypt algorithm for string or binary properties

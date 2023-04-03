@@ -2,8 +2,9 @@ package filter
 
 import (
 	"context"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Visit performs a DFS visit on the resource and sequentially invokes the ByProperty filters on each visited property
@@ -31,7 +32,9 @@ func Visit(ctx context.Context, resource *prop.Resource, filters ...ByProperty) 
 // property in the resource, along with the synchronized reference property. The synchronization is carried out with
 // best effort, which means the reference property may be out of sync. Out of sync can happen when the resource has a
 // property value that the reference resource does not have (i.e. Add) Caller need to test if
+//
 //	ref == nil || ref == outOfSync
+//
 // to determine if the reference is out of sync.
 // Any visit or filtering error is returned.
 func VisitWithRef(ctx context.Context, resource *prop.Resource, ref *prop.Resource, filters ...ByProperty) error {

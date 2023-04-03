@@ -2,8 +2,9 @@ package db
 
 import (
 	"context"
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/prop"
+
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/prop"
 )
 
 // NoOp return an no op implementation of DB. This implementation does nothing and always returns nil error. For Count

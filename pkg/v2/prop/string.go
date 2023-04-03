@@ -2,9 +2,10 @@ package prop
 
 import (
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"hash/fnv"
 	"strings"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // NewString creates a new string property associated with attribute.
