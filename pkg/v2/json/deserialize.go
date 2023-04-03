@@ -160,6 +160,13 @@ kvs:
 			if err != nil {
 				return err
 			}
+
+			_, err = d.navigator.Current().ChildAtIndex(attrName)
+			if err != nil {
+				d.skip()
+				continue
+			}
+
 			p = d.navigator.Dot(attrName).Current()
 			if d.navigator.Error() != nil {
 				return d.navigator.Error()
@@ -555,6 +562,20 @@ func (d *deserializeState) scanWhile(op int) {
 
 	d.off = len(d.data) + 1 // mark processed EOF with len+1
 	d.opCode = d.scan.eof()
+}
+
+func (d *deserializeState) skip() {
+	s, data, i := &d.scan, d.data, d.off
+	depth := len(s.parseState)
+	for {
+		op := s.step(s, data[i])
+		i++
+		if len(s.parseState) < depth {
+			d.off = i
+			d.opCode = op
+			return
+		}
+	}
 }
 
 // scanNext processed the next byte (as in d.data[d.off])
