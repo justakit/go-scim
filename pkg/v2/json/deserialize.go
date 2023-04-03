@@ -8,8 +8,8 @@ import (
 	"unicode/utf16"
 	"unicode/utf8"
 
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Deserialize is the entry point of JSON deserialization. Unmarshal the JSON input bytes into a pre-prepared unassigned

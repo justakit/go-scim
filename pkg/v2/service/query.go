@@ -3,11 +3,12 @@ package service
 import (
 	"context"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/crud/expr"
-	"github.com/imulab/go-scim/pkg/v2/db"
-	"github.com/imulab/go-scim/pkg/v2/json"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/crud/expr"
+	"github.com/justakit/go-scim/pkg/v2/db"
+	"github.com/justakit/go-scim/pkg/v2/json"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // QueryService returns a query resource service. This service is only capable of performing querying on a single type

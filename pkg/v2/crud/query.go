@@ -1,9 +1,10 @@
 package crud
 
 import (
-	"github.com/imulab/go-scim/pkg/v2/crud/expr"
-	"github.com/imulab/go-scim/pkg/v2/prop"
 	"sort"
+
+	"github.com/justakit/go-scim/pkg/v2/crud/expr"
+	"github.com/justakit/go-scim/pkg/v2/prop"
 )
 
 // Order for sorting

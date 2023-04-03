@@ -2,9 +2,10 @@ package service
 
 import (
 	"context"
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/db"
-	"github.com/imulab/go-scim/pkg/v2/prop"
+
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/db"
+	"github.com/justakit/go-scim/pkg/v2/prop"
 )
 
 // GetService returns a get resource service.

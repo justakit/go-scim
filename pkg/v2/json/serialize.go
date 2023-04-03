@@ -3,12 +3,13 @@ package json
 import (
 	"bytes"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"math"
 	"strconv"
 	"strings"
 	"unicode/utf8"
+
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // Interface to implement to be able to serialize to JSON.

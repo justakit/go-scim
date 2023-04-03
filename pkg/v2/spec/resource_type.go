@@ -2,8 +2,9 @@ package spec
 
 import (
 	"encoding/json"
-	"github.com/imulab/go-scim/pkg/v2/annotation"
-	"github.com/imulab/go-scim/pkg/v2/spec/internal"
+
+	"github.com/justakit/go-scim/pkg/v2/annotation"
+	"github.com/justakit/go-scim/pkg/v2/spec/internal"
 )
 
 // Resource type models the SCIM resource type. It is a collection of one main schema and zero or more schema extensions
@@ -20,6 +21,7 @@ import (
 //
 // For example, suppose we have a main schema containing attribute A1 and A2, a schema extension B containing attribute B1,
 // and another schema extension C containing attribute C1 and C2. The super attribute will be in the structure of:
+//
 //	{
 //		A1,
 //		A2,
@@ -35,6 +37,7 @@ import (
 // ResourceType is currently being parsed to and from JSON using special adapters. This design is subject to change
 // when we move to treat ResourceType as just another resource.
 // See also:
+//
 //	issue https://github.com/imulab/go-scim/issues/40
 type ResourceType struct {
 	id          string

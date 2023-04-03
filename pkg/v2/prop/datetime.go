@@ -2,8 +2,9 @@ package prop
 
 import (
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"time"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // NewDateTime creates a new dateTime property associated with attribute.

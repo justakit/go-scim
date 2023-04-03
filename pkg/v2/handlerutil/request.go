@@ -3,13 +3,14 @@ package handlerutil
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/crud"
-	"github.com/imulab/go-scim/pkg/v2/prop"
-	"github.com/imulab/go-scim/pkg/v2/service"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/justakit/go-scim/pkg/v2/crud"
+	"github.com/justakit/go-scim/pkg/v2/prop"
+	"github.com/justakit/go-scim/pkg/v2/service"
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 const (

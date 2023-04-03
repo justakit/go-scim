@@ -2,7 +2,8 @@ package prop
 
 import (
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/spec"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // NewBoolean creates a new boolean property associated with attribute.

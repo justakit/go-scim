@@ -3,8 +3,9 @@ package prop
 import (
 	"encoding/binary"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"hash/fnv"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 // NewMulti creates a new multiValued property associated with attribute. All sub attributes are created.

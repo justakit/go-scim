@@ -3,11 +3,12 @@ package spec
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/imulab/go-scim/pkg/v2/annotation"
-	"github.com/imulab/go-scim/pkg/v2/spec/internal"
 	"reflect"
 	"sort"
 	"strings"
+
+	"github.com/justakit/go-scim/pkg/v2/annotation"
+	"github.com/justakit/go-scim/pkg/v2/spec/internal"
 )
 
 // Attribute models a superset of defined SCIM attributes. It serves as the basic unit that describes data requirement
@@ -23,6 +24,7 @@ import (
 // respectively.
 //
 // As an example, a typical attribute can be defined in JSON as:
+//
 //	{
 //		"id": "urn:ietf:params:scim:schemas:core:2.0:User:name.familyName",
 //		"name": "familyName",
@@ -31,14 +33,15 @@ import (
 //		"required": false,
 //		"caseExact": false,
 //		"mutability": "readWrite",
-// 		"returned": "default",
-// 		"uniqueness": "none",
+//		"returned": "default",
+//		"uniqueness": "none",
 //		"_index": 1,
 //		"_path": "name.familyName",
 //		"_annotations": {
 //			"@Identity": {}
 //		}
 //	}
+//
 // The above example defines a typical "name.familyName" attribute in the User resource type. It can be universally
 // identified by "urn:ietf:params:scim:schemas:core:2.0:User:name.familyName"; can be placed at the second position (index 1)
 // among sub attributes of "urn:ietf:params:scim:schemas:core:2.0:User:name"; has a path of "name.familyName" and has a
@@ -58,6 +61,7 @@ import (
 // As of now, Attribute is parsed to and from JSON using special adapter structures that exposes and hides certain fields.
 // This design is subject to change when we move to treat Schema as just another resource.
 // See also:
+//
 //	issue https://github.com/imulab/go-scim/issues/40
 type Attribute struct {
 	name            string
@@ -261,6 +265,7 @@ func (attr *Attribute) IsElementAttributeOf(other *Attribute) bool {
 // "@ElementAnnotations" from this attribute.
 //
 // For example, a multiValued attribute (certain fields omitted for brevity) like
+//
 //	{
 //		"id": "urn:ietf:params:scim:schemas:core:2.0:User:emails",
 //		"name": "emails",
@@ -273,7 +278,9 @@ func (attr *Attribute) IsElementAttributeOf(other *Attribute) bool {
 //		},
 //		...
 //	}
+//
 // will derive an element attribute of:
+//
 //	{
 //		"id": "urn:ietf:params:scim:schemas:core:2.0:User:emails$elem",
 //		"name": "emails",
@@ -286,6 +293,7 @@ func (attr *Attribute) IsElementAttributeOf(other *Attribute) bool {
 //	}
 //
 // See also:
+//
 //	annotation.ElementAnnotations
 func (attr *Attribute) DeriveElementAttribute() *Attribute {
 	elemAttr := Attribute{

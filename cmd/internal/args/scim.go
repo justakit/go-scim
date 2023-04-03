@@ -2,11 +2,12 @@ package args
 
 import (
 	"encoding/json"
-	"github.com/imulab/go-scim/pkg/v2/spec"
-	"github.com/urfave/cli/v2"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
+	"github.com/urfave/cli/v2"
 )
 
 // Scim the configuration options related to the core SCIM specification.

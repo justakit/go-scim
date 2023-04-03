@@ -2,9 +2,10 @@ package facade
 
 import (
 	"errors"
-	"github.com/imulab/go-scim/pkg/v2/spec"
 	"reflect"
 	"strings"
+
+	"github.com/justakit/go-scim/pkg/v2/spec"
 )
 
 var (

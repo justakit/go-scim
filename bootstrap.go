@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/imulab/go-scim/cmd/api"
-	"github.com/imulab/go-scim/cmd/groupsync"
-	"github.com/urfave/cli/v2"
 	"log"
 	"os"
+
+	"github.com/justakit/go-scim/cmd/api"
+	"github.com/justakit/go-scim/cmd/groupsync"
+	"github.com/urfave/cli/v2"
 )
 
 func main() {
