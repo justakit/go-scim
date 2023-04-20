@@ -75,13 +75,16 @@ func WriteError(rw http.ResponseWriter, err error) error {
 		Detail:  err.Error(),
 	}
 
-	cause := errors.Unwrap(err)
-	if scimError, ok := cause.(*spec.Error); ok {
-		errMsg.Status = scimError.Status
-		errMsg.ScimType = scimError.Type
-	} else {
-		errMsg.Status = spec.ErrInternal.Status
-		errMsg.ScimType = spec.ErrInternal.Type
+	var specErr *spec.Error
+	if !errors.As(err, &specErr) {
+		specErr = spec.ErrInternal
+	}
+
+	errMsg.Status = specErr.Status
+	errMsg.ScimType = specErr.Type
+
+	if specErr == spec.ErrInternal {
+		errMsg.Detail = specErr.Error()
 	}
 
 	rw.Header().Set("Content-Type", spec.ApplicationScimJson)
