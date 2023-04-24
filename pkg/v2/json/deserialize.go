@@ -30,7 +30,7 @@ func Deserialize(json []byte, resource *prop.Resource) error {
 
 	// skip the first few spaces
 	state.scanWhile(scanSkipSpace)
-	return state.parseComplexProperty(false)
+	return state.parseComplexProperty(false, false)
 }
 
 // Entry point to deserialize a piece of JSON data into the given property. The JSON data is expected to be the content
@@ -136,7 +136,7 @@ Skip:
 // Parses a top level or embedded JSON object. When parsing a top level object, allowNull shall be false as top level
 // object does not correspond to any field name and hence cannot be null; when parsing an embedded object, allowNull may
 // be true. This method expects '{' (appears as scanBeginObject) to be the current byte
-func (d *deserializeState) parseComplexProperty(allowNull bool) error {
+func (d *deserializeState) parseComplexProperty(allowNull bool, skipFields bool) error {
 	// expects '{', and depending on allowNull, allowing for the null literal.
 	if d.opCode != scanBeginObject {
 		if allowNull && d.opCode == scanBeginLiteral {
@@ -161,10 +161,18 @@ kvs:
 				return err
 			}
 
+			if skipFields {
+			}
 			_, err = d.navigator.Current().ChildAtIndex(attrName)
-			if err != nil {
-				d.skip()
-				continue
+			if skipFields || err != nil {
+				switch d.opCode {
+				case scanBeginObject, scanBeginArray:
+					d.parseComplexProperty(true, true)
+				default:
+					d.scanWhile(scanContinue)
+				}
+
+				goto fastForward
 			}
 
 			p = d.navigator.Dot(attrName).Current()
@@ -224,7 +232,7 @@ func (d *deserializeState) parseSingleValuedProperty() error {
 	case spec.TypeBoolean:
 		return d.parseBooleanProperty()
 	case spec.TypeComplex:
-		return d.parseComplexProperty(true)
+		return d.parseComplexProperty(true, false)
 	default:
 		panic("invalid attribute type")
 	}
@@ -562,20 +570,6 @@ func (d *deserializeState) scanWhile(op int) {
 
 	d.off = len(d.data) + 1 // mark processed EOF with len+1
 	d.opCode = d.scan.eof()
-}
-
-func (d *deserializeState) skip() {
-	s, data, i := &d.scan, d.data, d.off
-	depth := len(s.parseState)
-	for {
-		op := s.step(s, data[i])
-		i++
-		if len(s.parseState) < depth {
-			d.off = i
-			d.opCode = op
-			return
-		}
-	}
 }
 
 // scanNext processed the next byte (as in d.data[d.off])
