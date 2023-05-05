@@ -224,8 +224,8 @@ func (p *multiValuedProperty) CountChildren() int {
 }
 
 func (p *multiValuedProperty) ForEachChild(callback func(index int, child Property) error) error {
-	for i, elem := range p.elements {
-		if err := callback(i, elem); err != nil {
+	for i := len(p.elements) - 1; i >= 0; i-- {
+		if err := callback(i, p.elements[i]); err != nil {
 			return err
 		}
 	}
