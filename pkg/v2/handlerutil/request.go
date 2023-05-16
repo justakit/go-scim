@@ -86,13 +86,17 @@ func QueryRequestFromGet(request *http.Request) (qr *service.QueryRequest, err e
 		}
 
 		if len(countValue) > 0 {
+			qr.Pagination.CountSpecified = true
+
 			qr.Pagination.Count, err = strconv.Atoi(countValue)
-			if err != nil || qr.Pagination.Count < 0 {
-				err = fmt.Errorf("%w: parameter count must be a non-negative integer", spec.ErrInvalidSyntax)
+			if err != nil {
+				err = fmt.Errorf("%w: parameter count must be an integer", spec.ErrInvalidSyntax)
 				return
 			}
-		} else {
-			qr.Pagination.Count = 0
+
+			if qr.Pagination.Count < 0 {
+				qr.Pagination.Count = 0
+			}
 		}
 	}
 

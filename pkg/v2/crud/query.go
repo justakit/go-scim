@@ -30,8 +30,9 @@ type (
 	}
 	// Option to paginate.
 	Pagination struct {
-		StartIndex int // 1-based start index
-		Count      int
+		StartIndex     int // 1-based start index
+		Count          int
+		CountSpecified bool
 	}
 )
 
